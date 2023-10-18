@@ -4,7 +4,7 @@ const ServiceCard = ({ serviceData }) => {
   return (
     <div className="rounded-lg flex flex-col border border-red-200 bg-red-100 drop-shadow-2xl">
       <img
-        className="rounded-t-lg w-full h-56 border border-red-100"
+        className="rounded-t-lg w-full h-64 border border-red-100"
         src={image}
         alt="Alternative Image"
       />

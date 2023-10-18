@@ -8,6 +8,10 @@ const Features = () => {
       <div>
         <img className="mx-auto w-full " src={featuresImg} alt="" />
       </div>
+      <div className="py-5 text-green-800">
+        Branch Name: Elite Motors Mercedes-Benz Branch Location: 123 Main
+        Street, Cityville, State
+      </div>
     </div>
   );
 };

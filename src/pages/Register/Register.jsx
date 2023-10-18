@@ -67,7 +67,7 @@ const Register = () => {
   return (
     <>
       <ToastContainer></ToastContainer>{" "}
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-red-100">
         <div className="hero-content flex-col">
           <h2 className="text-red-900 text-2xl font-black">Please Register</h2>
           <div className="card w-full max-w-sm shadow-2xl bg-base-100">
@@ -135,7 +135,7 @@ const Register = () => {
                 ERROR: {errorMessage}
               </p>
             )}
-            <p className="text-center text-sm mb-5">
+            <p className="text-center text-sm text-green-500 font-black mb-5">
               Alreadey registered? <Link to="/login"> then login </Link>
             </p>
           </div>
