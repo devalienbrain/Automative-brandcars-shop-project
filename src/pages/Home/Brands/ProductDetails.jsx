@@ -1,6 +1,4 @@
 import { useLoaderData, useParams } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 
 const ProductDetails = () => {
@@ -48,7 +46,7 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto my-10 p-10 rounded">
-      {/* <ToastContainer></ToastContainer> */}
+     
       <div className="text-center">
         <h1 className="pb-10 text-4xl font-bold text-red-950">
           PRODUCT DETAILS
