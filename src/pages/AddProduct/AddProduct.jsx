@@ -149,7 +149,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
-                type="number"
+                type="text"
                 name="ratings"
                 placeholder="product rating"
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"

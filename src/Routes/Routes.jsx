@@ -5,9 +5,9 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
-import ServiceDetailsCard from "../pages/ServiceDetails/ServiceDetailsCard";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
+import BrandedCars from "../pages/BrandedCars/BrandedCars";
 
 const routes = createBrowserRouter([
   {
@@ -29,14 +29,14 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/serviceDetails/:id",
+        path: "/brandedCars",
         element: (
           <PrivateRoute>
             {" "}
-            <ServiceDetailsCard></ServiceDetailsCard>{" "}
+            <BrandedCars></BrandedCars>{" "}
           </PrivateRoute>
         ),
-        loader: () => fetch("/data.json"),
+        loader: () => fetch("http://localhost:3000/products"),
       },
       {
         path: "/addproduct",
