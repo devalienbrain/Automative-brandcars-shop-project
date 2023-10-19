@@ -61,7 +61,7 @@ const NavBar = () => {
     <>
       <ToastContainer></ToastContainer>
       {/* FOR SMALL DEVICE */}
-      <div className="flex justify-end md:hidden navbar bg-red-950 text-red-400 font-bold">
+      <div className="flex justify-end md:hidden navbar bg-black text-red-400 font-bold">
         <div>
           {user ? (
             <div className="flex items-center">
@@ -90,7 +90,7 @@ const NavBar = () => {
         </div>
       </div>
       {/* FOR LARGE DEVICES */}
-      <div className="navbar bg-red-950 text-red-500 font-bold">
+      <div className="navbar bg-black text-red-800 font-bold text-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -143,7 +143,7 @@ const NavBar = () => {
           ) : (
             <div>
               <Link to="/login">
-                <button className="px-4 py-2 text-green-600 hover:text-green-500 text-sm font-semibold drop-shadow-lg rounded-lg">
+                <button className="px-4 py-2 text-green-600 hover:text-green-500 text-base font-semibold drop-shadow-lg rounded-lg">
                   Login
                 </button>
               </Link>
