@@ -1,16 +1,18 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const CarBrandCard = ({ carBrandData }) => {
   // console.log(carBrandData);
   useEffect(() => {
-    Aos.init({ duration: 5000 });
+    Aos.init({ duration: 3000 });
   }, []);
+
   const { name, image } = carBrandData || {};
+
   return (
-    <Link to="/brandedCars">
+    <Link to={`/brandedCars/${name}`}>
       <div
         className="rounded-lg flex flex-col border border-red-50 bg-red-200 drop-shadow-2xl p-5"
         data-aos="fade"

@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/brandedCars",
+        path: "/brandedCars/:name",
         element: (
           <PrivateRoute>
             {" "}
