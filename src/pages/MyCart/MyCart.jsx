@@ -1,9 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import CartCard from "./CartCard";
+import { useEffect, useState } from "react";
 
 const MyCart = () => {
-  const cartItems = useLoaderData();
-
+  const [cartItems, setCartItems] = useState([]);
+  const loadCartItems = useLoaderData();
+  useEffect(() => {
+    setCartItems(loadCartItems);
+  }, [loadCartItems]);
+  console.log(cartItems);
   return (
     <div className="container mx-auto">
       <div className="w-full md:w-3/4 p-3 my-5 mx-auto bg-green-100 rounded-md">
@@ -12,7 +17,12 @@ const MyCart = () => {
         </h1>
         <div>
           {cartItems.map((cartItem) => (
-            <CartCard key={cartItem._id} cartItem={cartItem}></CartCard>
+            <CartCard
+              key={cartItem._id}
+              cartItem={cartItem}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            ></CartCard>
           ))}
         </div>
       </div>
