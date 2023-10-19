@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const products = useLoaderData();
@@ -12,28 +13,52 @@ const ProductDetails = () => {
   const { image, name, brand, type, price, ratings, description } =
     targetedProduct || {};
 
-  const handleDonationList = () => {
-    // const donatedAlready = saveDonationData(id);
-    // if (!donatedAlready) {
-    //   toast("Donated susccessfully!");
-    // } else {
-    //   toast("Oops! Already donated!");
-    // }
+  const handleAddProductToCart = () => {
+    const newCart = {
+      image,
+      name,
+      brand,
+      type,
+      price,
+    };
+
+    console.log(newCart);
+
+    // send data to the server
+    fetch("http://localhost:3000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Congratulations!",
+            text: "Product Added To Your Cart Successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
   };
 
   return (
     <div className="container mx-auto my-10 p-10 rounded">
       {/* <ToastContainer></ToastContainer> */}
       <div className="text-center">
-        <h1 className="p-10 text-4xl font-bold text-red-950">
+        <h1 className="pb-10 text-4xl font-bold text-red-950">
           PRODUCT DETAILS
         </h1>
         <p>product id: {id}</p>
         <h1 className="text-3xl font-semibold p-3">{name}</h1>
-        <h2 className="text-3xl font-bold">Price: {price}</h2>
+        <h2 className="text-3xl font-bold">Price: {price} $</h2>
         <div className="p-5">
           <button
-            onClick={handleDonationList}
+            onClick={handleAddProductToCart}
             className="px-7 py-3 border border-red-600 text-red-700 hover:text-white hover:bg-red-600 rounded-lg drop-shadow-2xl text-xl font-semibold"
           >
             Add To Cart
