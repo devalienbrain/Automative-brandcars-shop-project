@@ -1,5 +1,5 @@
 import featuresImg from "../../../../public/Resources/banner1.jpg";
-const Features = () => {
+const FeatureCar = () => {
   return (
     <div className="text-center bg-green-50 p-5">
       <h3 className="text-3xl font-black text-green-950 pb-4">
@@ -16,4 +16,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default FeatureCar;
