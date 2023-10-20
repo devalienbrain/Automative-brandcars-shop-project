@@ -26,7 +26,7 @@ const BrandedCarCard = ({ brandedCar }) => {
             Details
           </button>
         </Link>
-        <Link to="/update">
+        <Link to={`/update/${_id}`}>
           <button className="ml-3 px-7 py-3 border border-green-700 text-green-700 hover:text-green-900 rounded-lg drop-shadow-xl">
             Update
           </button>

@@ -1,5 +1,58 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const UpdateProduct = () => {
-  const handleUpdateTheProduct = () => {};
+  const targetProductToUpdate = useLoaderData();
+  // console.log(targetProductToUpdate);
+  const { _id, image, name, brand, type, price, ratings, description } =
+    targetProductToUpdate;
+
+  const handleUpdateTheProduct = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const image = form.image.value;
+    const name = form.name.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const ratings = form.ratings.value;
+
+    const updatedProduct = {
+      image,
+      name,
+      brand,
+      type,
+      price,
+      description,
+      ratings,
+    };
+
+    console.log(updatedProduct);
+
+    // send updated data to the server
+    fetch(`http://localhost:3000/products/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Done!",
+            text: "The Product Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
   return (
     <div className="p-5 w-full lg:w-1/2 mx-auto">
@@ -7,7 +60,7 @@ const UpdateProduct = () => {
         UPDATE THE PRODUCT
       </h2>
       <p className="text-center text-red-600">
-        <small>product id: </small>
+        <small>product id: {_id}</small>
       </p>
       <form onSubmit={handleUpdateTheProduct}>
         {/* form */}
@@ -21,7 +74,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="image"
-                placeholder="product image url"
+                defaultValue={image}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -35,7 +88,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="product name"
+                defaultValue={name}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -49,7 +102,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="brand"
-                placeholder="brand name"
+                defaultValue={brand}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -63,7 +116,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="type"
-                placeholder="type of the product"
+                defaultValue={type}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -77,7 +130,7 @@ const UpdateProduct = () => {
               <input
                 type="number"
                 name="price"
-                placeholder="price of the product"
+                defaultValue={price}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -93,7 +146,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="description"
-                placeholder="short description of the product"
+                defaultValue={description}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
@@ -107,7 +160,7 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="ratings"
-                placeholder="product rating"
+                defaultValue={ratings}
                 className="input input-bordered rounded-xl drop-shadow-lg w-full"
               />
             </label>
