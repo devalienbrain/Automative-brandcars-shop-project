@@ -34,7 +34,7 @@ const UpdateProduct = () => {
 
     // send updated data to the server
     fetch(
-      `https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products/${_id}`,
+      `https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/products/${_id}`,
       {
         method: "PUT",
         headers: {

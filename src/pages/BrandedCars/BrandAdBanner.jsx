@@ -5,7 +5,7 @@ const BrandAdBanner = ({ name }) => {
 
   useEffect(() => {
     fetch(
-      "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/brandad"
+      "https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/brandad"
     )
       .then((res) => res.json())
       .then((data) => {

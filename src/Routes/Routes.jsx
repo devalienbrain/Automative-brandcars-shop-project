@@ -35,7 +35,7 @@ const routes = createBrowserRouter([
         element: <BrandedCars></BrandedCars>,
         loader: () =>
           fetch(
-            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products"
+            "https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/products"
           ),
       },
       {
@@ -55,7 +55,7 @@ const routes = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/cart"
+            "https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/cart"
           ),
       },
       {
@@ -67,7 +67,7 @@ const routes = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products"
+            "https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/products"
           ),
       },
       {
@@ -79,7 +79,7 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products/${params.id}`
+            `https://automotive-brand-shop-server-5xa3jm979-alien-brains-projects.vercel.app/products/${params.id}`
           ),
       },
     ],

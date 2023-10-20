@@ -1,5 +1,5 @@
-import user1 from "../../../../public/Resources/user1.jpeg";
-import user2 from "../../../../public/Resources/user2.avif";
+import user1 from "/Resources/user1.jpeg";
+import user2 from "/Resources/user2.avif";
 
 const UserReviews = () => {
   return (

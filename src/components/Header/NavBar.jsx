@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
-import logo from "../../../public/Resources/logo.png";
+import logo from "/Resources/logo.png";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);

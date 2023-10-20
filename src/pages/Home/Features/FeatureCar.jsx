@@ -1,4 +1,4 @@
-import featuresImg from "../../../../public/Resources/banner1.jpg";
+import featuresImg from "/Resources/banner1.jpg";
 const FeatureCar = () => {
   return (
     <div className="text-center bg-green-50 p-5">

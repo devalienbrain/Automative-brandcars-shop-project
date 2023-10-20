@@ -1,4 +1,4 @@
-import bannerImg from "../../../../public/Resources/banner2.jpg";
+import bannerImg from "/Resources/banner2.jpg";
 
 const Banner = ({ setDarkMode, isDarkMode }) => {
   const handleThemeToggle = () => {
