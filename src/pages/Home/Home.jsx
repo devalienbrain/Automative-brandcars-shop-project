@@ -3,20 +3,26 @@ import Banner from "./Banner/Banner";
 import FeatureCar from "./Features/FeatureCar";
 import UserReviews from "./Reviews/UserReviews";
 import CarBrands from "./Brands/CarBrands";
+import { useState } from "react";
 
 const Home = () => {
   const carBrandsData = useLoaderData();
-  // console.log(carBrandsData);
+  const [isDarkMode, setDarkMode] = useState(false);
+
   return (
-    <div>
-      <Banner></Banner>
+    <div
+      className={`bg-${isDarkMode ? "black" : "white"} text-${
+        isDarkMode ? "white" : "black"
+      }`}
+    >
+      <Banner setDarkMode={setDarkMode} isDarkMode={isDarkMode} />
       <div className="container mx-auto">
         <div>
-          <CarBrands carBrandsData={carBrandsData}></CarBrands>
+          <CarBrands carBrandsData={carBrandsData} />
         </div>
-        <FeatureCar></FeatureCar>
+        <FeatureCar />
         <div>
-          <UserReviews></UserReviews>
+          <UserReviews />
         </div>
       </div>
     </div>

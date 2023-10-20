@@ -1,6 +1,9 @@
 import bannerImg from "../../../../public/Resources/banner2.jpg";
 
-const Banner = () => {
+const Banner = ({ setDarkMode, isDarkMode }) => {
+  const handleThemeToggle = () => {
+    setDarkMode(!isDarkMode);
+  };
   return (
     <div
       className="hero"
@@ -20,6 +23,14 @@ const Banner = () => {
           <h3 className="mb-5 text-green-950 font-black">
             roadstar - the best car dealer in town
           </h3>
+          <div className="py-10">
+            <button
+              className="border border-white text-white px-6 py-2 font-semibold hover:bg-white hover:text-black"
+              onClick={handleThemeToggle}
+            >
+              TOGGLE THEME
+            </button>
+          </div>
         </div>
       </div>
     </div>
