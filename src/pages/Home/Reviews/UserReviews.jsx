@@ -4,11 +4,11 @@ import user2 from "/Resources/user2.avif";
 const UserReviews = () => {
   return (
     <div className="text-center py-7">
-      <h3 className="text-3xl font-black">USER REVIEWS</h3>
+      <h3 className="text-3xl font-black">USER REVIEWS: MEET OUR CLIENTS</h3>
 
       <div className=" flex flex-col md:flex-row gap-7 justify-center p-5 drop-shadow">
         <div className="border border-green-100 rounded-lg p-5 hover:bg-green-950 hover:border-none hover:text-white drop-shadow-2xl">
-          <div className="flex gap-5">
+          <div className="flex flex-col lg:flex-row gap-5">
             <div className="flex-1">
               <img className="w-full rounded-full" src={user1} />
             </div>
@@ -50,7 +50,7 @@ const UserReviews = () => {
           </div>
         </div>
         <div className="border border-green-100 rounded-lg p-5 hover:bg-green-950 hover:border-none hover:text-white drop-shadow-2xl">
-          <div className="flex gap-5">
+          <div className="flex flex-col lg:flex-row gap-5">
             <div className="flex-1">
               <img className="w-full rounded-full" src={user2} />
             </div>
