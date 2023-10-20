@@ -26,9 +26,11 @@ const BrandedCarCard = ({ brandedCar }) => {
             Details
           </button>
         </Link>
-        <button className="ml-3 px-7 py-3 border border-green-700 text-green-700 hover:text-green-900 rounded-lg drop-shadow-xl">
-          Update
-        </button>
+        <Link to="/update">
+          <button className="ml-3 px-7 py-3 border border-green-700 text-green-700 hover:text-green-900 rounded-lg drop-shadow-xl">
+            Update
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import MyCart from "../pages/MyCart/MyCart";
 import BrandedCars from "../pages/BrandedCars/BrandedCars";
 import ProductDetails from "../pages/Home/Brands/ProductDetails";
+import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 
 const routes = createBrowserRouter([
   {
@@ -31,12 +32,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/brandedCars/:name",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <BrandedCars></BrandedCars>{" "}
-          </PrivateRoute>
-        ),
+        element: <BrandedCars></BrandedCars>,
         loader: () => fetch("http://localhost:3000/products"),
       },
       {
@@ -64,6 +60,14 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:3000/products"),
+      },
+      {
+        path: "/update",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
       },
     ],
   },
