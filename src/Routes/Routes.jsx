@@ -33,7 +33,10 @@ const routes = createBrowserRouter([
       {
         path: "/brandedCars/:name",
         element: <BrandedCars></BrandedCars>,
-        loader: () => fetch("http://localhost:3000/products"),
+        loader: () =>
+          fetch(
+            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products"
+          ),
       },
       {
         path: "/addproduct",
@@ -50,7 +53,10 @@ const routes = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/cart"),
+        loader: () =>
+          fetch(
+            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/cart"
+          ),
       },
       {
         path: "/details/:id",
@@ -59,7 +65,10 @@ const routes = createBrowserRouter([
             <ProductDetails></ProductDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/products"),
+        loader: () =>
+          fetch(
+            "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products"
+          ),
       },
       {
         path: "/update/:id",
@@ -69,8 +78,9 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
-        // loader: () => fetch("http://localhost:3000/products"),
+          fetch(
+            `https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

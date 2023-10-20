@@ -135,8 +135,8 @@ const Register = () => {
                 ERROR: {errorMessage}
               </p>
             )}
-            <p className="text-center text-sm text-green-500 font-black mb-5">
-              Alreadey registered? <Link to="/login"> then login </Link>
+            <p className="text-center text-sm text-green-800 font-black mb-5">
+              Alreadey Registered? <Link to="/login"> Go Login Page </Link>
             </p>
           </div>
         </div>

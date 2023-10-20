@@ -27,13 +27,16 @@ const AddProduct = () => {
     console.log(newProduct);
 
     // send data to the server
-    fetch("http://localhost:3000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

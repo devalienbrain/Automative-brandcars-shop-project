@@ -23,13 +23,16 @@ const ProductDetails = () => {
     console.log(newCart);
 
     // send data to the server
-    fetch("http://localhost:3000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCart),
-    })
+    fetch(
+      "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newCart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -46,7 +49,6 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto my-10 p-10 rounded">
-     
       <div className="text-center">
         <h1 className="pb-10 text-4xl font-bold text-red-950">
           PRODUCT DETAILS

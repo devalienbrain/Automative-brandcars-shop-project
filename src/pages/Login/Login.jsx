@@ -104,7 +104,7 @@ const Login = () => {
                 className="px-4 py-2 border border-blue-200 text-blue-950 bg-blue-200 hover:bg-blue-300 font-bold rounded-md flex items-center gap-3"
               >
                 <FcGoogle></FcGoogle>
-                Login with Google
+                Login with Google Account
               </button>
             </div>
           </div>

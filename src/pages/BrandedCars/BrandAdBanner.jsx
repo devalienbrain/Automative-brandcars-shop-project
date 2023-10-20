@@ -4,7 +4,9 @@ const BrandAdBanner = ({ name }) => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/brandad")
+    fetch(
+      "https://automotive-brand-shop-server-b9getiq5c-alien-brains-projects.vercel.app/brandad"
+    )
       .then((res) => res.json())
       .then((data) => {
         setBrands(data);
