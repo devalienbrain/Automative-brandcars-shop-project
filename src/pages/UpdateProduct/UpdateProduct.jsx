@@ -139,7 +139,7 @@ const UpdateProduct = () => {
             </label>
           </div>
           {/* 6_short description field */}
-          <div className="form-control w-full">
+          <div className="form-control w-full hidden">
             <label className="label">
               <span className="label-text text-lg font-bold">
                 Short Description

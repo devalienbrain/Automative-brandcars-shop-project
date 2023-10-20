@@ -101,7 +101,7 @@ const Login = () => {
             <div className="mx-auto py-5 font-semibold text-center text-white">
               <button
                 onClick={handleGoogleLogin}
-                className="px-4 py-2 border border-blue-200 text-blue-950 bg-blue-200 hover:bg-blue-300 font-bold rounded-md flex items-center gap-3"
+                className="px-7 py-4 border border-blue-200 text-blue-950 bg-blue-200 hover:bg-blue-300 font-bold rounded-md flex items-center gap-3"
               >
                 <FcGoogle></FcGoogle>
                 Login with Google Account
