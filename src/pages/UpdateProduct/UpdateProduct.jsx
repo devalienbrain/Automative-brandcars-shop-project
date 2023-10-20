@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
@@ -6,6 +6,8 @@ const UpdateProduct = () => {
   // console.log(targetProductToUpdate);
   const { _id, image, name, brand, type, price, ratings, description } =
     targetProductToUpdate;
+
+  const navigate = useNavigate();
 
   const handleUpdateTheProduct = (event) => {
     event.preventDefault();
@@ -48,11 +50,12 @@ const UpdateProduct = () => {
         console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
-            title: "Done!",
+            title: "Good Job!",
             text: "The Product Updated Successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Done",
           });
+          navigate(`/brandedCars/${brand}`);
         }
       });
   };

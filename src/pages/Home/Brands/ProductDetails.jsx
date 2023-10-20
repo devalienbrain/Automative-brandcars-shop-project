@@ -1,11 +1,11 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const products = useLoaderData();
   const { id } = useParams();
   console.log(products, id);
-
+  const navigate = useNavigate();
   const targetedProduct = products.find((product) => id === product._id);
 
   const { image, name, brand, type, price, ratings, description } =
@@ -43,6 +43,8 @@ const ProductDetails = () => {
             icon: "success",
             confirmButtonText: "Close",
           });
+
+          navigate("/");
         }
       });
   };
