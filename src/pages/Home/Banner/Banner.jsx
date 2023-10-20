@@ -25,7 +25,7 @@ const Banner = ({ setDarkMode, isDarkMode }) => {
           </h3>
           <div className="py-10">
             <button
-              className="border border-white text-white px-6 py-2 font-semibold hover:bg-white hover:text-black"
+              className="border border-red-200 rounded-lg text-white px-6 py-2 font-semibold hover:bg-white hover:text-black"
               onClick={handleThemeToggle}
             >
               TOGGLE THEME

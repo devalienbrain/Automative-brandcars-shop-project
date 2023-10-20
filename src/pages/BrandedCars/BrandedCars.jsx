@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import BrandedCarCard from "./BrandedCarCard";
+import BrandAdBanner from "./BrandAdBanner";
 
 const BrandedCars = () => {
   const brandedCars = useLoaderData();
@@ -9,9 +10,13 @@ const BrandedCars = () => {
     // console.log(brandedCar.brand);
     return name === brandedCar.brand;
   });
+  // console.log(filteredBrandedCars);
   return (
     <>
       {" "}
+      <div>
+        <BrandAdBanner name={name}></BrandAdBanner>
+      </div>
       <div className="text-center my-10  container mx-auto">
         <h3 className="text-4xl font-black text-green-950">
           OUR {name} BRAND CARS
