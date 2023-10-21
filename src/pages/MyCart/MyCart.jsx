@@ -8,7 +8,7 @@ const MyCart = () => {
   useEffect(() => {
     setCartItems(loadCartItems);
   }, [loadCartItems]);
-  console.log(cartItems);
+  // console.log(cartItems);
   return (
     <div className="container mx-auto">
       <div className="w-full md:w-3/4 p-3 my-5 mx-auto bg-green-100 rounded-md">

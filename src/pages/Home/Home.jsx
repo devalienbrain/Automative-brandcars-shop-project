@@ -7,7 +7,11 @@ import { useState } from "react";
 
 const Home = () => {
   const carBrandsData = useLoaderData();
-  const [isDarkMode, setDarkMode] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem("isDarkMode")) || false
+  );
+  // console.log(isDarkMode);
 
   return (
     <div
@@ -15,7 +19,7 @@ const Home = () => {
         isDarkMode ? "white" : "black"
       }`}
     >
-      <Banner setDarkMode={setDarkMode} isDarkMode={isDarkMode} />
+      <Banner setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
       <div className="container mx-auto">
         <div>
           <CarBrands carBrandsData={carBrandsData} />

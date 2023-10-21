@@ -22,7 +22,7 @@ const BrandAdBanner = ({ name }) => {
     // console.log(brand.brand, name);
     return name === brand.brand;
   });
-  console.log(filteredBrand[0]?.bgimg1);
+  // console.log(filteredBrand[0]?.bgimg1);
   // const bg1 = filteredBrand[0].bgimg[0];
   // console.log(bg1);
   return (

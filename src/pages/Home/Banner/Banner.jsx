@@ -1,9 +1,14 @@
 import bannerImg from "/Resources/banner2.jpg";
 
-const Banner = ({ setDarkMode, isDarkMode }) => {
+const Banner = ({ setIsDarkMode, isDarkMode }) => {
   const handleThemeToggle = () => {
-    setDarkMode(!isDarkMode);
+    // console.log("previous", isDarkMode);
+    const temp = !isDarkMode;
+    setIsDarkMode(temp);
+    // console.log("After", temp);
+    localStorage.setItem("isDarkMode", JSON.stringify(temp));
   };
+
   return (
     <div
       className="hero"
@@ -25,10 +30,10 @@ const Banner = ({ setDarkMode, isDarkMode }) => {
           </h3>
           <div className="py-10">
             <button
-              className="border border-red-200 rounded-lg text-white px-6 py-2 font-semibold hover:bg-white hover:text-black"
+              className="border border-white rounded-lg text-white px-4 py-1 font-semibold hover:text-black hover:border-none"
               onClick={handleThemeToggle}
             >
-              TOGGLE THEME
+              Go {isDarkMode ? "Light" : "Dark"}
             </button>
           </div>
         </div>

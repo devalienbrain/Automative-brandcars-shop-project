@@ -1,10 +1,10 @@
 import Swal from "sweetalert2";
 const CartCard = ({ cartItem, cartItems, setCartItems }) => {
-  console.log(cartItem);
+  // console.log(cartItem);
   const { _id, image, name, type, brand, price } = cartItem;
 
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Want to delete, sure?",
       text: "You won't be able to revert this!",
@@ -23,7 +23,7 @@ const CartCard = ({ cartItem, cartItems, setCartItems }) => {
         )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire(
                 "Deleted!",
